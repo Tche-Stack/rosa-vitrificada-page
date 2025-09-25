@@ -17,7 +17,7 @@ export const Hero = () => {
             <Sparkles className="text-primary w-8 h-8 mr-3" />
             <h1 className="text-5xl md:text-7xl font-bold">
               <span className="text-foreground">Estética </span>
-              <span className="text-primary">Beleza.com</span>
+              <span className="text-rose-300">Beleza.com</span>
             </h1>
             <Sparkles className="text-primary w-8 h-8 ml-3" />
           </div>
