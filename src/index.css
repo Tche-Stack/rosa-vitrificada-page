@@ -8,35 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 340 15% 8%;
+    --foreground: 340 25% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 340 10% 12% / 0.3;
+    --card-foreground: 340 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 340 10% 12% / 0.95;
+    --popover-foreground: 340 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 335 85% 65%;
+    --primary-foreground: 340 15% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 10% 15% / 0.4;
+    --secondary-foreground: 340 25% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 340 8% 20% / 0.3;
+    --muted-foreground: 340 15% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 335 75% 70%;
+    --accent-foreground: 340 15% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 340 25% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 15% 25% / 0.3;
+    --input: 340 10% 15% / 0.4;
+    --ring: 335 85% 65%;
 
-    --radius: 0.5rem;
+    --glass: 340 10% 15% / 0.1;
+    --glass-border: 340 25% 80% / 0.1;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(335 85% 65%), hsl(320 75% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(340 15% 8%), hsl(340 10% 12%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsl(340 10% 15% / 0.1), 
+      hsl(335 20% 25% / 0.05)
+    );
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +111,25 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-secondary);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-glass border border-glass-border;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-card/30 border border-glass-border rounded-3xl;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-glass {
+    background: var(--gradient-glass);
   }
 }
