@@ -15,7 +15,10 @@ export const Hero = () => {
         <div className="glass-card p-8 md:p-12">
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="text-primary w-8 h-8 mr-3" />
-            <h1 className="text-5xl md:text-7xl font-bold gradient-primary bg-clip-text text-zinc-50">Estética Beleza.com</h1>
+            <h1 className="text-5xl md:text-7xl font-bold">
+              <span className="text-foreground">Estética </span>
+              <span className="text-primary">Beleza.com</span>
+            </h1>
             <Sparkles className="text-primary w-8 h-8 ml-3" />
           </div>
           
